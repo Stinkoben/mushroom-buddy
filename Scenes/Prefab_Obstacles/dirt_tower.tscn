@@ -1,0 +1,124 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjdt40qw3elep"]
+
+[ext_resource type="PackedScene" uid="uid://r02ixhxcx5yw" path="res://Scenes/Dirt.tscn" id="1_obsaq"]
+
+[node name="DirtTower" type="Node2D"]
+
+[node name="Dirt" parent="." instance=ExtResource("1_obsaq")]
+position = Vector2(-2, -1)
+
+[node name="Dirt3" parent="." instance=ExtResource("1_obsaq")]
+position = Vector2(0, -58)
+
+[node name="Dirt2" parent="." instance=ExtResource("1_obsaq")]
+position = Vector2(-13, -1)
+
+[node name="Dirt4" parent="." instance=ExtResource("1_obsaq")]
+position = Vector2(9, -32)
+
+[node name="Dirt5" parent="." instance=ExtResource("1_obsaq")]
+position = Vector2(7, -39)
+
+[node name="Dirt6" parent="." instance=ExtResource("1_obsaq")]
+position = Vector2(-1, -49)
+
+[node name="Dirt7" parent="." instance=ExtResource("1_obsaq")]
+position = Vector2(-5, -41)
+
+[node name="Dirt8" parent="." instance=ExtResource("1_obsaq")]
+position = Vector2(11, -1)
+
+[node name="Dirt9" parent="." instance=ExtResource("1_obsaq")]
+position = Vector2(-9, -13)
+
+[node name="Dirt10" parent="." instance=ExtResource("1_obsaq")]
+position = Vector2(6, -27)
+
+[node name="Dirt11" parent="." instance=ExtResource("1_obsaq")]
+position = Vector2(-7, -26)
+
+[node name="Dirt12" parent="." instance=ExtResource("1_obsaq")]
+position = Vector2(-6, -10)
+
+[node name="Dirt13" parent="." instance=ExtResource("1_obsaq")]
+position = Vector2(-1, -37)
+
+[node name="Dirt14" parent="." instance=ExtResource("1_obsaq")]
+position = Vector2(0, -25)
+
+[node name="Dirt15" parent="." instance=ExtResource("1_obsaq")]
+position = Vector2(9, -16)
+
+[node name="Dirt16" parent="." instance=ExtResource("1_obsaq")]
+position = Vector2(-5, -14)
+
+[node name="Dirt18" parent="." instance=ExtResource("1_obsaq")]
+position = Vector2(11, -8)
+rotation = -0.23911
+
+[node name="Dirt19" parent="." instance=ExtResource("1_obsaq")]
+position = Vector2(13, -65)
+rotation = -0.23911
+
+[node name="Dirt20" parent="." instance=ExtResource("1_obsaq")]
+position = Vector2(0, -8)
+rotation = -0.23911
+
+[node name="Dirt21" parent="." instance=ExtResource("1_obsaq")]
+position = Vector2(22, -39)
+rotation = -0.23911
+
+[node name="Dirt22" parent="." instance=ExtResource("1_obsaq")]
+position = Vector2(20, -46)
+rotation = -0.23911
+
+[node name="Dirt23" parent="." instance=ExtResource("1_obsaq")]
+position = Vector2(12, -56)
+rotation = -0.23911
+
+[node name="Dirt24" parent="." instance=ExtResource("1_obsaq")]
+position = Vector2(8, -48)
+rotation = -0.23911
+
+[node name="Dirt25" parent="." instance=ExtResource("1_obsaq")]
+position = Vector2(24, -8)
+rotation = -0.23911
+
+[node name="Dirt26" parent="." instance=ExtResource("1_obsaq")]
+position = Vector2(4, -20)
+rotation = -0.23911
+
+[node name="Dirt27" parent="." instance=ExtResource("1_obsaq")]
+position = Vector2(19, -34)
+rotation = -0.23911
+
+[node name="Dirt28" parent="." instance=ExtResource("1_obsaq")]
+position = Vector2(6, -33)
+rotation = -0.23911
+
+[node name="Dirt29" parent="." instance=ExtResource("1_obsaq")]
+position = Vector2(7, -17)
+rotation = -0.23911
+
+[node name="Dirt30" parent="." instance=ExtResource("1_obsaq")]
+position = Vector2(12, -44)
+rotation = -0.23911
+
+[node name="Dirt31" parent="." instance=ExtResource("1_obsaq")]
+position = Vector2(13, -32)
+rotation = -0.23911
+
+[node name="Dirt32" parent="." instance=ExtResource("1_obsaq")]
+position = Vector2(22, -23)
+rotation = -0.23911
+
+[node name="Dirt33" parent="." instance=ExtResource("1_obsaq")]
+position = Vector2(25, -3)
+rotation = -0.23911
+
+[node name="Dirt34" parent="." instance=ExtResource("1_obsaq")]
+position = Vector2(23, -10)
+rotation = -0.23911
+
+[node name="Dirt17" parent="." instance=ExtResource("1_obsaq")]
+position = Vector2(10, -3)

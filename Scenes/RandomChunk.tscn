@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://lbj77auiuhot"]
+
+[ext_resource type="Script" path="res://Scripts/RandomChunk.gd" id="1_e30ng"]
+[ext_resource type="Texture2D" uid="uid://db8o4imt73ty5" path="res://Assets/Art/gradient.png" id="2_17j54"]
+[ext_resource type="PackedScene" uid="uid://r02ixhxcx5yw" path="res://Scenes/Dirt.tscn" id="3_x8ef5"]
+
+[node name="RandomChunk" type="Node2D"]
+script = ExtResource("1_e30ng")
+
+[node name="Gradient" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(16, 346)
+scale = Vector2(0.1, 2.307)
+texture = ExtResource("2_17j54")
+
+[node name="Dirt" parent="." instance=ExtResource("3_x8ef5")]
+position = Vector2(-1312, 594)

@@ -1,0 +1,70 @@
+[gd_scene load_steps=8 format=3 uid="uid://bfjnoufm1od2e"]
+
+[ext_resource type="Script" path="res://Scripts/Buddy.gd" id="1_mxa1g"]
+[ext_resource type="Texture2D" uid="uid://b6p17x58g66ed" path="res://Assets/Art/run_anim.png" id="1_ur36r"]
+[ext_resource type="AudioStream" uid="uid://b4gxopevxpm6y" path="res://Assets/Sound/death_sound.mp3" id="3_ycbhn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x33f1"]
+radius = 8.0
+
+[sub_resource type="Animation" id="Animation_sh10q"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Buddy/RunAnim:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_ovvrh"]
+resource_name = "Run"
+length = 0.55
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Buddy/RunAnim:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ebjxq"]
+_data = {
+"RESET": SubResource("Animation_sh10q"),
+"Run": SubResource("Animation_ovvrh")
+}
+
+[node name="Buddy" type="CharacterBody2D"]
+floor_stop_on_slope = false
+floor_max_angle = 1.14494
+script = ExtResource("1_mxa1g")
+RECOVER_SPEED = 80.0
+X_OFFSET = 225.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_x33f1")
+
+[node name="RunAnim" type="Sprite2D" parent="."]
+texture = ExtResource("1_ur36r")
+hframes = 6
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_ebjxq")
+}
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ycbhn")
+volume_db = 3.748

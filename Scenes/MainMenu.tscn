@@ -1,0 +1,250 @@
+[gd_scene load_steps=12 format=3 uid="uid://troops0k3rqv"]
+
+[ext_resource type="Script" path="res://Scripts/MainMenu.gd" id="1_3sscx"]
+[ext_resource type="AudioStream" uid="uid://d0r5ovgqe0d6" path="res://Assets/Sound/Menu-Start.mp3" id="2_3n86d"]
+[ext_resource type="PackedScene" uid="uid://bp513gokf7dy0" path="res://Scenes/Clouds.tscn" id="2_nn2gl"]
+[ext_resource type="AudioStream" uid="uid://cn3dj8g6iply3" path="res://Assets/Sound/MenuLoop.mp3" id="3_l0jft"]
+[ext_resource type="PackedScene" uid="uid://dp1g54uhbgmo1" path="res://Scenes/Ground.tscn" id="5_85aan"]
+[ext_resource type="Texture2D" uid="uid://dltty8nm57ppc" path="res://Assets/Art/idle_anim.png" id="6_jh47m"]
+[ext_resource type="Texture2D" uid="uid://be6q3s22jwd51" path="res://Assets/Art/audio_icon.png" id="8_42dtr"]
+
+[sub_resource type="Animation" id="Animation_jduye"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Idle:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Idle:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-5.3, 5.6)]
+}
+
+[sub_resource type="Animation" id="Animation_a36qf"]
+resource_name = "buddy_idle"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Idle:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 0, 1, 0, 1, 0, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Idle:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(5.3, 5.6), Vector2(-5.3, 5.6)]
+}
+
+[sub_resource type="Animation" id="Animation_msmcw"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ellqb"]
+_data = {
+"RESET": SubResource("Animation_jduye"),
+"buddy_idle": SubResource("Animation_a36qf"),
+"fade_out": SubResource("Animation_msmcw")
+}
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3sscx")
+
+[node name="Clouds" parent="." instance=ExtResource("2_nn2gl")]
+
+[node name="Ground" parent="." instance=ExtResource("5_85aan")]
+position = Vector2(-1, 633)
+
+[node name="TitleBG" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 54.0
+offset_top = 145.0
+offset_right = 597.0
+offset_bottom = 411.0
+theme_override_colors/default_color = Color(0.290196, 0.290196, 0.290196, 1)
+theme_override_font_sizes/normal_font_size = 53
+text = "Mushroom Buddy"
+fit_content = true
+scroll_active = false
+
+[node name="Title" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 150.0
+offset_right = 582.0
+offset_bottom = 416.0
+theme_override_font_sizes/normal_font_size = 53
+text = "Mushroom Buddy"
+fit_content = true
+scroll_active = false
+
+[node name="HighscoreLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 591.0
+offset_right = 638.0
+offset_bottom = 631.0
+text = "Highscore: 0"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 120.0
+offset_top = -240.0
+offset_right = 270.0
+offset_bottom = -140.0
+grow_vertical = 0
+
+[node name="BTN_NewGame" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../BTN_Exit")
+focus_neighbor_bottom = NodePath("../BTN_Controls")
+focus_next = NodePath("../BTN_Controls")
+focus_previous = NodePath("../BTN_Exit")
+button_mask = 3
+text = "Start
+"
+
+[node name="BTN_Controls" type="Button" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+focus_neighbor_top = NodePath("../BTN_NewGame")
+focus_neighbor_bottom = NodePath("../BTN_Credits")
+focus_next = NodePath("../BTN_Credits")
+focus_previous = NodePath("../BTN_NewGame")
+text = "Controls"
+
+[node name="BTN_Credits" type="Button" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+focus_neighbor_top = NodePath("../BTN_Controls")
+focus_neighbor_bottom = NodePath("../BTN_Exit")
+focus_next = NodePath("../BTN_Exit")
+focus_previous = NodePath("../BTN_Controls")
+text = "Credits"
+
+[node name="BTN_Exit" type="Button" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+focus_neighbor_top = NodePath("../BTN_Credits")
+focus_neighbor_bottom = NodePath("../BTN_NewGame")
+focus_next = NodePath("../BTN_NewGame")
+focus_previous = NodePath("../BTN_Credits")
+text = "Exit"
+
+[node name="StartJingle" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_3n86d")
+volume_db = -4.684
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ellqb")
+}
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_l0jft")
+volume_db = -2.811
+autoplay = true
+
+[node name="Idle" type="Sprite2D" parent="."]
+position = Vector2(652, 591)
+scale = Vector2(-5.3, 5.6)
+texture = ExtResource("6_jh47m")
+hframes = 2
+
+[node name="VolumeSlider" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 779.0
+offset_top = 658.0
+offset_right = 943.0
+offset_bottom = 677.0
+value = 50.0
+
+[node name="AudioIcon" type="Sprite2D" parent="."]
+position = Vector2(758, 668)
+scale = Vector2(2, 2)
+texture = ExtResource("8_42dtr")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -7.0
+offset_top = -6.0
+offset_right = 969.0
+offset_bottom = 698.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="EscTipLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 646.0
+offset_right = 635.0
+offset_bottom = 686.0
+text = "Press <esc> to return to the main menu"
+
+[connection signal="pressed" from="VBoxContainer/BTN_NewGame" to="." method="_on_btn_new_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/BTN_Controls" to="." method="_on_btn_new_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/BTN_Controls" to="." method="_on_btn_controls_pressed"]
+[connection signal="pressed" from="VBoxContainer/BTN_Credits" to="." method="_on_btn_credits_pressed"]
+[connection signal="pressed" from="VBoxContainer/BTN_Exit" to="." method="_on_btn_exit_pressed"]
+[connection signal="drag_ended" from="VolumeSlider" to="." method="_on_h_slider_drag_ended"]

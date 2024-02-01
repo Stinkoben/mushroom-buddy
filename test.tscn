@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://d3jrkv74t41ba"]
+
+[ext_resource type="PackedScene" uid="uid://dp1g54uhbgmo1" path="res://Scenes/Ground.tscn" id="1_yqdvj"]
+[ext_resource type="PackedScene" uid="uid://bp513gokf7dy0" path="res://Scenes/Clouds.tscn" id="2_2mqe4"]
+[ext_resource type="PackedScene" uid="uid://bfjnoufm1od2e" path="res://Scenes/Buddy.tscn" id="2_tgiyg"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Ground" parent="." instance=ExtResource("1_yqdvj")]
+position = Vector2(4, 519)
+
+[node name="Clouds" parent="." instance=ExtResource("2_2mqe4")]
+visible = false
+position = Vector2(9, 23)
+
+[node name="Buddy" parent="." instance=ExtResource("2_tgiyg")]
+position = Vector2(479, 448)
+scale = Vector2(10, 10)

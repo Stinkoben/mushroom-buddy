@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckl2i16w71ho1"]
+
+[ext_resource type="PackedScene" uid="uid://r02ixhxcx5yw" path="res://Scenes/Dirt.tscn" id="1_dg2ot"]
+[ext_resource type="PackedScene" uid="uid://bq4q6h8h3hl68" path="res://Scenes/Stone.tscn" id="2_e4ngj"]
+
+[node name="BuriedRock" type="Node2D"]
+
+[node name="Dirt" parent="." instance=ExtResource("1_dg2ot")]
+position = Vector2(-17, -3)
+
+[node name="Dirt2" parent="." instance=ExtResource("1_dg2ot")]
+position = Vector2(-16, -5)
+
+[node name="Dirt3" parent="." instance=ExtResource("1_dg2ot")]
+position = Vector2(-12, -3)
+
+[node name="Dirt5" parent="." instance=ExtResource("1_dg2ot")]
+position = Vector2(-17, -14)
+
+[node name="Dirt6" parent="." instance=ExtResource("1_dg2ot")]
+position = Vector2(-12, -41)
+
+[node name="Dirt7" parent="." instance=ExtResource("1_dg2ot")]
+position = Vector2(-13, -32)
+
+[node name="Dirt8" parent="." instance=ExtResource("1_dg2ot")]
+position = Vector2(-14, -22)
+
+[node name="Dirt4" parent="." instance=ExtResource("1_dg2ot")]
+position = Vector2(-15, -17)
+
+[node name="Stone" parent="." instance=ExtResource("2_e4ngj")]
+position = Vector2(0, -4)
+
+[node name="Stone2" parent="." instance=ExtResource("2_e4ngj")]
+position = Vector2(-1, -47)
+
+[node name="Stone3" parent="." instance=ExtResource("2_e4ngj")]
+position = Vector2(0, -35)
+
+[node name="Stone4" parent="." instance=ExtResource("2_e4ngj")]
+position = Vector2(3, -2)
+
+[node name="Stone5" parent="." instance=ExtResource("2_e4ngj")]
+position = Vector2(0, -19)

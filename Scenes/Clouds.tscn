@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://bp513gokf7dy0"]
+
+[ext_resource type="Shader" path="res://Scripts/clouds.gdshader" id="1_3yfwr"]
+[ext_resource type="Texture2D" uid="uid://vew1an4iu263" path="res://Assets/Art/icon.svg" id="2_sfrr8"]
+
+[sub_resource type="Gradient" id="Gradient_40uk3"]
+offsets = PackedFloat32Array(0.658537, 0.878049, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.855263, 0.855263, 0.855263, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_te7iv"]
+gradient = SubResource("Gradient_40uk3")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ootfn"]
+noise_type = 0
+seed = 3
+frequency = 0.008
+fractal_octaves = 4
+fractal_gain = 0.6
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_npb6s"]
+width = 960
+height = 690
+seamless = true
+seamless_blend_skirt = 0.189
+noise = SubResource("FastNoiseLite_ootfn")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mpkf6"]
+shader = ExtResource("1_3yfwr")
+shader_parameter/time_speed = 1.0
+shader_parameter/noise_img = SubResource("NoiseTexture2D_npb6s")
+shader_parameter/gradient_img = SubResource("GradientTexture1D_te7iv")
+
+[node name="Clouds" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_mpkf6")
+position = Vector2(482.75, 345.5)
+scale = Vector2(8.20703, 6.08594)
+texture = ExtResource("2_sfrr8")
+offset = Vector2(0.405, 0)
+flip_v = true
