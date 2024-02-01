@@ -243,8 +243,8 @@ offset_bottom = 686.0
 text = "Press <esc> to return to the main menu"
 
 [connection signal="pressed" from="VBoxContainer/BTN_NewGame" to="." method="_on_btn_new_game_pressed"]
-[connection signal="pressed" from="VBoxContainer/BTN_Controls" to="." method="_on_btn_new_game_pressed"]
 [connection signal="pressed" from="VBoxContainer/BTN_Controls" to="." method="_on_btn_controls_pressed"]
+[connection signal="pressed" from="VBoxContainer/BTN_Controls" to="." method="_on_btn_new_game_pressed"]
 [connection signal="pressed" from="VBoxContainer/BTN_Credits" to="." method="_on_btn_credits_pressed"]
 [connection signal="pressed" from="VBoxContainer/BTN_Exit" to="." method="_on_btn_exit_pressed"]
 [connection signal="drag_ended" from="VolumeSlider" to="." method="_on_h_slider_drag_ended"]

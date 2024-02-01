@@ -39,8 +39,8 @@ func _on_btn_exit_pressed():
 func _on_h_slider_drag_ended(value_changed):
 	var val = $VolumeSlider.value
 	print(val)
-	val = -100 if val == 0 else (val-15) / 6
-	val = clamp(val,-100,15)
+	val = -100 if val == 0 else (val-50) / 5
+	val = clamp(val,-100,10)
 	print(val)
 	print()
 
